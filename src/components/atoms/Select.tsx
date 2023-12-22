@@ -24,7 +24,7 @@ interface ISelect {
 const SelectComponent = ({ placeholder, label, items = [] }: ISelect) => {
   return (
     <Select>
-      <SelectTrigger className="">
+      <SelectTrigger className="h-[50px]">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent>

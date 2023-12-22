@@ -6,6 +6,7 @@ import SelectComponent from "@/components/atoms/Select";
 
 import useAnimation from "@/hooks/useAnimation";
 import cleanerAnimationJson from "@/assets/animations/json/cleaner.json";
+import ModalComponent from "@/components/molecules/Modal";
 
 interface IInteractiveFormSection {
   title: string;
@@ -23,6 +24,8 @@ const InteractiveFormSection = ({
     isLoop: true,
   });
 
+  const handleClickNextStep = () => {};
+
   return (
     <div className={Styles.container}>
       {cleanerAnimation}
@@ -33,7 +36,8 @@ const InteractiveFormSection = ({
           label="Profesion"
           items={itemsToSelect}
         />
-        <ButtonComponent />
+
+        <ModalComponent buttonName={"Siguiente paso"} header={""} body={"ww"} />
       </section>
     </div>
   );
