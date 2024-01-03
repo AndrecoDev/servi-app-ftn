@@ -1,5 +1,8 @@
+import { Providers } from "@/redux/provider";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import { NavbarComponent } from "@/components/molecules/Navbar";
 import "./globals.css";
 
@@ -16,10 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={inter.className}>
-        <NavbarComponent />
-        {children}
+        <Providers>
+          <NavbarComponent />
+          {children}
+        </Providers>
       </body>
     </html>
   );

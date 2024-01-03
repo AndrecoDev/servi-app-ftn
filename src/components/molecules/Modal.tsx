@@ -1,12 +1,12 @@
 import React, { useState, ReactNode } from "react";
 import { Modal, Button } from "keep-react";
-import { CloudArrowUp, File } from "phosphor-react";
+import { CloudArrowUp, UserPlus } from "phosphor-react";
 import ButtonComponent from "../atoms/Button";
 
 interface ModalComponentProps {
   buttonName: string;
   header: string;
-  body: string;
+  body: any;
   onPrevClick?: () => void;
   onNextClick?: () => void;
   icon?: ReactNode;
@@ -29,8 +29,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
       <ButtonComponent name={buttonName} onClick={toggleModal} type="primary" />
 
       <Modal
-        icon={<File size={28} color="#1B4DFF" />}
-        // icon={icon}
+        icon={<UserPlus size={28} color="#1B4DFF" />}
         size="7x1"
         show={showModal}
         onClose={toggleModal}

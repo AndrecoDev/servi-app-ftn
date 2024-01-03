@@ -17,15 +17,14 @@ export const NavbarComponent = () => {
     <Navbar fluid={true}>
       <Navbar.Container className="flex items-center justify-between">
         <Navbar.Brand>
-          <Image src={logoIcon} alt="RapidPro 360" width="120" height="70" />
+          <Image src={logoIcon} alt="RapidPro 360" width="120" height="80" />
         </Navbar.Brand>
-
         <Navbar.Container className="flex items-center gap-6">
           <Navbar.Container
             tag="ul"
             className="lg:flex hidden items-center justify-between gap-4"
           >
-            <TextInput
+            {/* <TextInput
               id="#id-10"
               placeholder="Search anything"
               color="gray"
@@ -33,6 +32,11 @@ export const NavbarComponent = () => {
               type="text"
               addon={<MagnifyingGlass size={20} color="#5E718D" />}
               addonPosition="left"
+            /> */}
+            <ButtonComponent
+              name="Únete a la comunidad"
+              type="outlinePrimary"
+              size="xs"
             />
             <Navbar.Link
               icon={<FacebookLogo size={20} color="#444" />}
@@ -47,20 +51,21 @@ export const NavbarComponent = () => {
               iconAnimation={false}
             />
           </Navbar.Container>
-          <Navbar.Container className="flex gap-1">
-            <ButtonComponent
-              name="Unete a la comunidad"
-              type="outlinePrimary"
-              size="sm"
-            />
+          <Navbar.Container className="flex gap-2">
             <Navbar.Toggle className="block" />
           </Navbar.Container>
         </Navbar.Container>
         <Navbar.Collapse
           collapseType="sidebar"
-          className="fixed right-0 top-0 bg-white p-10 lg:!w-2/6 xl:!w-1/6 md:!w-2/6 w-1/2"
+          className="fixed right-0 top-0 bg-white p-3 lg:!w-2/6 xl:!w-1/6 md:!w-2/6 w-1/2"
         >
           <Navbar.Container tag="ul" className="flex flex-col gap-5">
+            <ButtonComponent
+              name="Únete como Rapider"
+              type="outlinePrimary"
+              size="xs"
+            />
+
             <Navbar.Link
               linkName="Home"
               icon={<CaretDown size={20} />}

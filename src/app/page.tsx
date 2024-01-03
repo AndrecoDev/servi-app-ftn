@@ -1,14 +1,19 @@
 "use client";
+import "../config/Language/index";
 
 import InteractiveFormSection from "@/components/molecules/InteractiveFormSection/InteractiveFormSection";
 
+import { useTranslation } from "react-i18next";
+
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <main
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       <InteractiveFormSection
-        title={"Encuentra el profesional perfecto"}
+        title={t("Home.FindProfessional")}
         onButtonClick={() => {}}
       />
     </main>
