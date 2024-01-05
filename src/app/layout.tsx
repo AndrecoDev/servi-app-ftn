@@ -4,8 +4,6 @@ import { Inter } from "next/font/google";
 
 import "./globals.css";
 
-import { NavbarComponent } from "@/components/organisms/Navbar";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,10 +19,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={inter.className}>
-        <Providers>
-          <NavbarComponent />
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
