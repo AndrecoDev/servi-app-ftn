@@ -1,7 +1,7 @@
 "use client";
 import { SetStateAction, useState } from "react";
 import { CheckboxGroup } from "keep-react";
-import ButtonComponent from "./Button";
+import ButtonComponent from "../atoms/Button";
 
 export const CheckboxGroupComponent = () => {
   const [selected, setSelected] = useState("");
@@ -53,7 +53,7 @@ export const CheckboxGroupComponent = () => {
         selected={selected}
         onOptionChange={handleOptionChange}
       />
-      <ButtonComponent name="Volver" type="outlineGray" />
+      <ButtonComponent variant="destructive">Volver</ButtonComponent>
     </form>
   );
 };

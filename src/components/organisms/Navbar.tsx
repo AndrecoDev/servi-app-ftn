@@ -33,11 +33,7 @@ export const NavbarComponent = () => {
               addon={<MagnifyingGlass size={20} color="#5E718D" />}
               addonPosition="left"
             /> */}
-            <ButtonComponent
-              name="Únete a la comunidad"
-              type="outlinePrimary"
-              size="xs"
-            />
+            <ButtonComponent>Únete a la comunidad</ButtonComponent>
             <Navbar.Link
               icon={<FacebookLogo size={20} color="#444" />}
               iconAnimation={false}
@@ -55,34 +51,22 @@ export const NavbarComponent = () => {
             <Navbar.Toggle className="block" />
           </Navbar.Container>
         </Navbar.Container>
+
         <Navbar.Collapse
           collapseType="sidebar"
-          className="fixed right-0 top-0 bg-white p-3 lg:!w-2/6 xl:!w-1/6 md:!w-2/6 w-1/2"
+          className="fixed right-0 top-2 bg-white p-6 lg:!w-2/6 xl:!w-1/6 md:!w-2/6 w-1/2"
         >
           <Navbar.Container tag="ul" className="flex flex-col gap-5">
-            <ButtonComponent
-              name="Únete como Rapider"
-              type="outlinePrimary"
-              size="xs"
-            />
+            <ButtonComponent>Únete como Rapider</ButtonComponent>
 
-            <Navbar.Link
+            {/* <Navbar.Link
               linkName="Home"
               icon={<CaretDown size={20} />}
               className="!py-0"
-            />
-            <Navbar.Link
-              linkName="Projects"
-              icon={<CaretDown size={20} />}
-              className="!py-0"
-            />
-            <Navbar.Link
-              linkName="Blogs"
-              icon={<CaretDown size={20} />}
-              className="!py-0"
-            />
-            <Navbar.Link linkName="News" className="!py-0" />
-            <Navbar.Link linkName="Resources" className="!py-0" />
+            /> */}
+
+            <Navbar.Link linkName="Noticias" className="!py-0" />
+            <Navbar.Link linkName="Quienes somos" className="!py-0" />
           </Navbar.Container>
         </Navbar.Collapse>
       </Navbar.Container>

@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Styles from "./styles.module.css";
 
-import ButtonComponent from "@/components/atoms/Button";
+import cleanerAnimationJson from "@/assets/animations/json/cleaner.json";
+
 import SelectComponent from "@/components/atoms/Select";
+import ModalComponent from "@/components/molecules/Modal";
+import { CheckboxGroupComponent } from "@/components/molecules/CheckboxGroup";
 
 import useAnimation from "@/hooks/useAnimation";
-import cleanerAnimationJson from "@/assets/animations/json/cleaner.json";
-import ModalComponent from "@/components/molecules/Modal";
-import { CheckboxGroupComponent } from "@/components/atoms/CheckboxGroup";
-
 import { useTranslation } from "react-i18next";
 interface IInteractiveFormSection {
   title: string;
@@ -19,13 +18,25 @@ const InteractiveFormSection = ({
   title,
   onButtonClick,
 }: IInteractiveFormSection) => {
-  const itemsToSelect = [{ id: 1, key: "1", value: "Oficios varios" }];
+  const [itemSelected, setItemSelected] = useState("");
   const { t } = useTranslation();
+
+  const itemsToSelect = [
+    { id: 1, key: "1", value: "Oficios varios" },
+    { id: 2, key: "2", value: "Limpieza" },
+  ];
 
   const cleanerAnimation = useAnimation({
     animationJson: cleanerAnimationJson,
     isLoop: true,
   });
+
+  const handleSelectItemChanges = (e: any) => {
+    const itemValue = itemsToSelect.filter((element) => element.key === e)[0]
+      .value;
+
+    setItemSelected(itemValue);
+  };
 
   const handleClickNextStep = () => {};
 
@@ -38,11 +49,13 @@ const InteractiveFormSection = ({
           placeholder={t("Home.SelectProfessional")}
           label="Profesion"
           items={itemsToSelect}
+          onValueChange={handleSelectItemChanges}
         />
 
         <ModalComponent
           buttonName={"Siguiente paso"}
           header={""}
+          buttonDisabled={!itemSelected}
           body={<CheckboxGroupComponent />}
         />
       </section>

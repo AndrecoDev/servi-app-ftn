@@ -1,45 +1,10 @@
-import React, { useState } from "react";
-import { Button } from "keep-react";
+import React from "react";
+import { Button, ButtonProps } from "@/components/ui/button";
 
-interface IButtonComponentProps {
-  name: string;
-  onClick?: () => void;
-  type: string;
-  isCircle?: boolean;
-  size?: string;
-}
+interface IButtomComponentProps extends ButtonProps {}
 
-const ButtonComponent: React.FC<IButtonComponentProps> = ({
-  name,
-  onClick,
-  type,
-  isCircle = false,
-  size = "md",
-}) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const handleClick = async () => {
-    if (onClick) {
-      try {
-        setIsLoading(true);
-        onClick();
-      } finally {
-        setIsLoading(false);
-      }
-    }
-  };
-
-  return (
-    <Button
-      size={size}
-      width="full"
-      onClick={handleClick}
-      type={type}
-      circle={isCircle}
-      // isLoading={isLoading}
-    >
-      {name}
-    </Button>
-  );
+const ButtomComponent: React.FC<IButtomComponentProps> = (props) => {
+  return <Button {...props}>{props.children}</Button>;
 };
 
-export default ButtonComponent;
+export default ButtomComponent;

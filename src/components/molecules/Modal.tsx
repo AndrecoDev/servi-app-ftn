@@ -10,6 +10,7 @@ interface ModalComponentProps {
   onPrevClick?: () => void;
   onNextClick?: () => void;
   icon?: ReactNode;
+  buttonDisabled?: boolean;
 }
 
 const ModalComponent: React.FC<ModalComponentProps> = ({
@@ -18,7 +19,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
   body,
   onPrevClick,
   onNextClick,
-  icon,
+  buttonDisabled = false,
 }) => {
   const [showModal, setShowModal] = useState(false);
 
@@ -26,8 +27,9 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
 
   return (
     <>
-      <ButtonComponent name={buttonName} onClick={toggleModal} type="primary" />
-
+      <ButtonComponent disabled={buttonDisabled} onClick={toggleModal}>
+        {buttonName}
+      </ButtonComponent>
       <Modal
         icon={<UserPlus size={28} color="#1B4DFF" />}
         size="7x1"

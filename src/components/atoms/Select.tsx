@@ -15,22 +15,16 @@ interface IItem {
   value: string | number;
 }
 
-interface ISelect {
-  placeholder?: string;
-  label?: string;
-  items: IItem[];
-}
-
-const SelectComponent = ({ placeholder, label, items = [] }: ISelect) => {
+const SelectComponent: React.FC<any> = (props) => {
   return (
-    <Select>
+    <Select {...props}>
       <SelectTrigger className="h-[50px]">
-        <SelectValue placeholder={placeholder} />
+        <SelectValue placeholder={props.placeholder} />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>{label}</SelectLabel>
-          {items.map((e: IItem) => (
+          <SelectLabel>{props.label}</SelectLabel>
+          {props.items.map((e: IItem) => (
             <SelectItem key={e.id} value={e.key}>
               {e.value}
             </SelectItem>

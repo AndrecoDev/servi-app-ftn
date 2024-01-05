@@ -1,10 +1,10 @@
 import { Providers } from "@/redux/provider";
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { NavbarComponent } from "@/components/molecules/Navbar";
 import "./globals.css";
+
+import { NavbarComponent } from "@/components/organisms/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
