@@ -3,12 +3,13 @@ import Styles from "./styles.module.css";
 
 import cleanerAnimationJson from "@/assets/animations/json/cleaner.json";
 
+import useAnimation from "@/hooks/useAnimation";
+import { useTranslation } from "react-i18next";
+
 import SelectComponent from "@/components/atoms/Select";
 import ModalComponent from "@/components/molecules/Modal";
 import { CheckboxGroupComponent } from "@/components/molecules/CheckboxGroup";
-
-import useAnimation from "@/hooks/useAnimation";
-import { useTranslation } from "react-i18next";
+import DialogComponent from "@/components/organisms/Dialog";
 interface IInteractiveFormSection {
   title: string;
   onButtonClick: () => void;
@@ -22,8 +23,8 @@ const InteractiveFormSection = ({
   const { t } = useTranslation();
 
   const itemsToSelect = [
-    { id: 1, key: "1", value: "Oficios varios" },
-    { id: 2, key: "2", value: "Limpieza" },
+    { id: 1, key: "1", value: "Limpieza" },
+    { id: 2, key: "2", value: "Mantenimiento" },
   ];
 
   const cleanerAnimation = useAnimation({
@@ -52,11 +53,10 @@ const InteractiveFormSection = ({
           onValueChange={handleSelectItemChanges}
         />
 
-        <ModalComponent
-          buttonName={"Siguiente paso"}
-          header={""}
-          buttonDisabled={!itemSelected}
-          body={<CheckboxGroupComponent />}
+        <DialogComponent
+          buttonDispatchName={"Next"}
+          body={<h1>hola</h1>}
+          footer={<h2>welcome</h2>}
         />
       </section>
     </div>

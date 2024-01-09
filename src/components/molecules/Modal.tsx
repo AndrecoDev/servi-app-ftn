@@ -38,11 +38,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({
       >
         <Modal.Header>{header}</Modal.Header>
         <Modal.Body>
-          <div className="space-y-6">
-            <p className="text-body-5 md:text-body-4 leading-relaxed text-metal-500">
-              {body}
-            </p>
-          </div>
+          <div className="space-y-6">{body}</div>
         </Modal.Body>
         <Modal.Footer>
           {onPrevClick && (

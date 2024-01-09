@@ -13,7 +13,7 @@ export const CheckboxGroupComponent = () => {
   };
 
   return (
-    <form className="space-y-4 p-1">
+    <div className="space-y-4 p-1">
       <h3 style={{ fontSize: "18px" }}>
         When would you like the job to start?
       </h3>
@@ -54,6 +54,6 @@ export const CheckboxGroupComponent = () => {
         onOptionChange={handleOptionChange}
       />
       <ButtonComponent variant="destructive">Volver</ButtonComponent>
-    </form>
+    </div>
   );
 };
